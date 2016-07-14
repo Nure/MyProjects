@@ -1,23 +1,34 @@
 import sys
-# import os
+import os
+from collections import Counter
+# 1
 while True:
     user_input = raw_input("Enter file name: ")
     if user_input == "assignment.txt":
-        break
+
+        if os.stat(user_input).st_size > 0:
+            break
+        else:
+            print "Thanks you! You can not proceed because this file is empty"
+            sys.exit()
+            
         
-    elif user_input.lower() == "Give up!".lower():
+    if user_input.lower() == "Give up!".lower():
         sys.exit()
-        
-    
-# print os.path.abspath("/assignment.txt")        
-# file = open(os.path.abspath(user_input), 'r')
 
-# num_lines = open('/assignment.txt').read().count('\n')
-
-# num_lines = open(os.path.abspath(user_input), 'r').read().count('\n') + 1
-# print num_lines
+# 2 Count No of lines and words
+num_lines = open(os.path.abspath(user_input), 'r').read().count('\n') + 1
+print "The file 'assignment' consists", num_lines, "lines"
 
 
-with open(user_input, 'r') as f:
-    lines = f.readlines()
-    num_lines = len([l for l in lines if l.strip(' \n') != ''])
+no_of_words = len(open(os.path.abspath(user_input), 'r').read().split())
+
+print "The file 'assignment' consists", no_of_words, "words"
+
+# 3
+list_of_words = open(os.path.abspath(user_input), 'r').read().split()
+
+
+words_to_count = (word for word in list_of_words if word[:1].isupper())
+most_common_words = Counter(words_to_count).most_common()
+print most_common_words
