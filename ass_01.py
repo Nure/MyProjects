@@ -25,7 +25,8 @@ no_of_words = len(open(os.path.abspath(user_input), 'r').read().split())
 
 print "The file 'assignment' consists", no_of_words, "words"
 
-# 3
+# 3 Find out the mostly appeared words and print them with number of occurrences
+
 list_of_words = open(os.path.abspath(user_input), 'r').read().split()
 
 
