@@ -1,1 +1,1 @@
-Live site: nure.parallax-web.surge.sh
+Live site: http://nure.parallax-web.surge.sh
