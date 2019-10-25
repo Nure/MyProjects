@@ -23,27 +23,3 @@ window.addEventListener('scroll', function() {
       );
     }
   });
-
-
-
-
-
-
-
-
-
-
-// // Initialize and add the map
-// function initMap() {
-//     // my location
-//     const loc = { lat: 37.7510, lng: -97.8220 };
-//     // centered map on location
-//     const map = new google.maps.Map(document.querySelector('.map'), 
-//     {
-//         zoom: 14,
-//         center: loc
-//     });
-//     // The maker, positioned at location
-//     const maker = new google.maps.Maker({ position: loc, map: map
-//     });
-// }
