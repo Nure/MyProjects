@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Please rate your service</title>
+</head>
+
+<body>
+  <div class="container">
+    <img src="../static/logo.png" alt="Lexus" class="logo"> {% if message %}
+    <div class="message">{{ message | safe }}</div>
+    {% endif %}
+    <form action="/submit" method="POST">
+      <input type="text" name="customer" placeholder="Name of vehicle owner" />
+
+      <div class="form-group">
+        <select name="dealer">
+          <option value="">Select Dealer</option>
+          <option value="John Lee">John Lee</option>
+          <option value="Bob Marlin">Bob Marlin</option>
+          <option value="Ricky Martin">Ricky Martin</option>
+          <option value="Henry Ford">Henry Ford</option>
+        </select>
+        <div class="form-group">
+          <h3>Please Rate Your Dealer</h3>
+          <input type="radio" name="rating" value="1" /> 1
+          <input type="radio" name="rating" value="2" /> 2
+          <input type="radio" name="rating" value="3" /> 3
+          <input type="radio" name="rating" value="4" /> 4
+          <input type="radio" name="rating" value="5" /> 5
+          <input type="radio" name="rating" value="6" /> 6
+          <input type="radio" name="rating" value="7" /> 7
+          <input type="radio" name="rating" value="8" /> 8
+          <input type="radio" name="rating" value="9" /> 9
+          <input type="radio" name="rating" value="10" checked /> 10
+        </div>
+        <div class="form-group">
+          <h3>Comments about your experience</h3>
+          <textarea name="comments" id="" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit" value="Submit your experience" class="btn">
+    </form>
+    </div>
+  </div>
+</body>
+
+</html>
